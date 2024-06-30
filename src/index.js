@@ -35,6 +35,7 @@ const App = () => {
 
   const handleUserClick = (user) => {
     setSelectedUser({ ...user, imageError: false });
+    document.querySelector('.details').classList.add('open');
   };
 
   const handleImageLoad = (e) => {
@@ -45,6 +46,10 @@ const App = () => {
   const handleImageError = (e) => {
     e.target.style.display = 'none'; // Hide the original image
     e.target.nextSibling.style.display = 'flex'; // Show Font Awesome user icon
+  };
+
+  const closeDetails = () => {
+    document.querySelector('.details').classList.remove('open');
   };
 
   if (loading) {
@@ -99,6 +104,7 @@ const App = () => {
       <div className="details">
         {selectedUser ? (
           <div className="details-content">
+            <button className="close-btn" onClick={closeDetails}>X</button>
             <div className="avatar-container-big">
               <img
                 src={selectedUser.avatar}
