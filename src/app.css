@@ -208,7 +208,7 @@ section:hover {
 /* Existing CSS */
 
 /* Mobile view adjustments */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .close-btn {
     width: 40px;
     height: 40px;
